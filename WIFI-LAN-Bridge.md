@@ -13,9 +13,9 @@ first:
 
 a file called userconf.txt containg the following
 
----
+```
 username:$6$K4kkXNMZOgAg0cok$kcxCISzwhTjm37T3YhgMD.rr1axQE6Z9fzq2Jz3AFQOKPTlcuZ6kRueia1u.DRUe26MSSznKqWnbYVgEr0.zG1
----
+```
 
 this creates a user (username) with the password "default password"
 
