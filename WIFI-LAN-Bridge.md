@@ -1,4 +1,4 @@
-#Wifi to Ethernet bridge (on a RasPi)
+# Wifi to Ethernet bridge (on a RasPi)
 
 download the raspi "lite" image using the raspi disk imager tool and put it on the SD card (this is gonna erase your SD card, i assume that's okay)
 
@@ -21,7 +21,7 @@ this creates a user (brian) with the password "default password"
 next you'll want to save a text file with your wifi credentials, the file name should be `wpa_supplicant.conf` (you might need to change this in explorer with "show file extensions" enabled, because notepad usually gives everything a .txt extension. same applies to ssh below).
 
 
--------from under this line--------
+```
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 country=IE
 update_config=1
@@ -30,9 +30,10 @@ network={
  ssid="<Name of your wireless LAN>"
  psk="<Password for your wireless LAN>"
 }
--------to above this line----------
+```
 
 and finally you need to make an empty file named `ssh` in the same place. this enables remote access.
+
 *******************
 
 now you can insert the sd card into the raspi and it should connect automatically to your wifi.
@@ -43,7 +44,12 @@ you can connect with ssh, so open up command prompt on your laptop and try:
 
 
 `sudo nano /etc/dhcpcd.conf`
-add: "denyinterfaces eth0" at the bottom. to exit nano press ctrl+x and say yes to save modified buffer.
+add: 
+
+```
+denyinterfaces eth0
+```
+at the bottom. to exit nano press ctrl+x and say yes to save modified buffer.
 
 
 okay, actually, it gets kinda tricky now...
@@ -111,6 +117,7 @@ sudo nanoenx00e04c534458 /etc/sysctl.conf
 #net.ipv4.ip_forward=1
 
 # and delete the "#" at the beginning of the line and save again with ctrl+x.
+```
 
 finally, now create a systemd service, something that will start the wifi/ethernet linking program at boot, and restart it if it crashes...
 
