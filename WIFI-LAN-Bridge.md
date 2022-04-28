@@ -1,4 +1,5 @@
 # Wifi to Ethernet bridge (on a RasPi)
+*actually, it's not technically a bridge, but it works maybe like you would expect a bridge to work*
 
 download the raspi "lite" image using the raspi disk imager tool and put it on the SD card (this is gonna erase your SD card, i assume that's okay)
 
