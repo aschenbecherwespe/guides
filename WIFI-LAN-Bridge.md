@@ -10,13 +10,13 @@ in the boot partition you'll need to write some text files.
 
 first: 
 
-a file called userconf.txt with the following
+a file called userconf.txt containg the following
 
--------from under this line--------
-brian:$6$K4kkXNMZOgAg0cok$kcxCISzwhTjm37T3YhgMD.rr1axQE6Z9fzq2Jz3AFQOKPTlcuZ6kRueia1u.DRUe26MSSznKqWnbYVgEr0.zG1
--------to above this line----------
+---
+username:$6$K4kkXNMZOgAg0cok$kcxCISzwhTjm37T3YhgMD.rr1axQE6Z9fzq2Jz3AFQOKPTlcuZ6kRueia1u.DRUe26MSSznKqWnbYVgEr0.zG1
+---
 
-this creates a user (brian) with the password "default password"
+this creates a user (username) with the password "default password"
 
 next you'll want to save a text file with your wifi credentials, the file name should be `wpa_supplicant.conf` (you might need to change this in explorer with "show file extensions" enabled, because notepad usually gives everything a .txt extension. same applies to ssh below).
 
