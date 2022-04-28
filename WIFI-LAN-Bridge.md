@@ -42,15 +42,33 @@ you can connect with ssh, so open up command prompt on your laptop and try:
 
 `ssh <yourusername>@raspberrypi.local` and log in with `default password` or whatever you chose. it might take a few minutes to fully start up first. you could check if it's connected by looking at the list of connected devices in your router web interface. you can also use this to find the IP address, and do `ssh <username>@<IP-address>` instead of the hostname (if the first ssh command didn't work).
 
+okay! you're in. using bash, and some tools we can edit text files:
 
-`sudo nano /etc/dhcpcd.conf`
-add: 
+
+```bash
+sudo nano /etc/dhcpcd.conf
+```
+
+add at the bottom of the file: 
 
 ```
 denyinterfaces eth0
 ```
-at the bottom. to exit nano press ctrl+x and say yes to save modified buffer.
+to exit nano press ctrl+x and say yes to save modified buffer.
 
+next we need to enable packet forwarding:
+
+```
+# open this network config file
+sudo nanoenx00e04c534458 /etc/sysctl.conf
+
+# then find this line:
+#net.ipv4.ip_forward=1
+
+# and delete the "#" at the beginning of the line and save again with ctrl+x.
+```
+
+----------
 
 okay, actually, it gets kinda tricky now...
 
@@ -107,17 +125,6 @@ relayd
 
 (it shoud just print out its options)
 
-next we need to enable packet forwarding:
-
-```
-# open this network config file
-sudo nanoenx00e04c534458 /etc/sysctl.conf
-
-# then find this line:
-#net.ipv4.ip_forward=1
-
-# and delete the "#" at the beginning of the line and save again with ctrl+x.
-```
 
 finally, now create a systemd service, something that will start the wifi/ethernet linking program at boot, and restart it if it crashes...
 
