@@ -150,11 +150,9 @@ WantedBy=multi-user.target
 
 note: this assumes your interface names are eth0 and wlan0, you can check with the `ip a` command. you should see at least three interfaces that are numbered:
 
-1: lo
-
-2: eth0
-
-3: wlan0
+1. lo
+2. eth0
+3. wlan0
 
 
 if not, eth0 and wlan0 in the above file will need to be updated.
