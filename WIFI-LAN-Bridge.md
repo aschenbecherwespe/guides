@@ -2,7 +2,7 @@
 
 download the raspi "lite" image using the raspi disk imager tool and put it on the SD card (this is gonna erase your SD card, i assume that's okay)
 
-***ACTUALLY! you don't need to do any of the following, you can enter it all using the raspi imager tool. fill in username, password, wifi ssid and password, country and locale, click the enable ssh checkbox and finally click the "skip first setup wizard". then you can continue with the guide after the horizontal line (logging in with `ssh`). or you could do it the oldfashioned manual way described below and feel like a hacker :P***
+***ACTUALLY! you don't need to do some of the following, you can enter it all using the raspi imager tool. fill in username, password, wifi ssid and password, country and locale, click the enable ssh checkbox and finally click the "skip first setup wizard". then you can continue with the guide after the horizontal line (logging in with `ssh`). or you could do it the oldfashioned manual way described below and feel like a hacker :P***
 
 ------------------
 then you should be able to access a `boot` partition on the SD card from your normal computer.
